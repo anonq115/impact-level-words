@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* Define a keyframe animation for the highlighting effect */
+  @keyframes highlightAnimation {
+    0% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: -100% 50%;
+    }
+  }
+
+  body {}
+
+  /* Style for the chat container */
+  .chat-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .chat-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    position: relative;
+  }
+
+  /* Style for user messages */
+  .user-message {
+    color: black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  /* Style for assistant messages */
+  .assistant-message {
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  /* Highlight effect for specific responses */
+  .highlight {
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Define the gradient background for highlighting */
+    background: linear-gradient(45deg, hsl(143 100% 68% / 1), hsl(81 100% 87% / 1) 99.9%);
+    border-radius: 3.7px;
+    /* Apply the keyframe animation to the background */
+    animation: highlightAnimation 5s linear infinite;
+    /* Adjust background size to blend seamlessly */
+    background-size: 145% 100%;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+<div class="chat-wrapper">
+  <div class="chat-container">
+    <!-- User message -->
+    <div class="user-message">User:</div>
+    <!-- Assistant message with "brutally" emphasized effect -->
+    <div class="assistant-message">Ok, in a 45-word limit, summarize the outer mucus layer and the adherent mucus layer <span class="highlight">brutally</span> specifically.</div>
+    <!-- User message -->
+    <div class="user-message">Anon:</div>
+    <!-- Assistant message with a response -->
+    <div class="assistant-message">The outer mucus layer is primarily composed of mucus produced by goblet cells, serving as a physical barrier to prevent gastric acid damage. The adherent mucus layer consists of mucin.</div>
+  </div>
+</div>
+<p>
+basically, the 'brutally' word strengthens the response in terms of how hard the specificity should be. This color-coded highlight can give users cues about the level of emphasis or effect it has on the answer.
+</p>
+</body>
+</html>
